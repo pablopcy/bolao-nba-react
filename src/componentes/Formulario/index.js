@@ -22,17 +22,35 @@ const Formulario = () => {
 
   const tipoNome = categoria === "Campeão" ? "Equipe" : categoria === "Coach of the Year" ? "Treinador" : "Atleta"; 
 
+  const [texto, setTexto] = useState('');
+
   const aoSalvar = (evento) => {
     evento.preventDefault();
+    console.log('Form foi submetido =>', categoria, texto)
   }
 
   return (
     <section className="formulario">
       <form onSubmit={aoSalvar}>
         <h2>Bolão NBA 2026/27</h2>
-        <ListaSuspensa obrigatorio={true} label="Categoria" itens={categorias} valor={categoria} aoAlterado={setCategoria}/>
-        <CampoTexto obrigatorio={true} label={tipoNome} placeholder="Digite aqui..." />
-        <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem..." />
+        <ListaSuspensa 
+          obrigatorio={true} 
+          label="Categoria" 
+          itens={categorias} 
+          valor={categoria} 
+          aoAlterado={setCategoria}
+          />
+        <CampoTexto 
+          obrigatorio={true} 
+          label={tipoNome} 
+          placeholder="Digite aqui..." 
+          valor={texto} 
+          aoAlterado={valor => setTexto(valor)} 
+          />
+        <CampoTexto 
+          label="Imagem" 
+          placeholder="Informe o endereço da imagem..." 
+          />
         
         <Botao>
           Criar Card
