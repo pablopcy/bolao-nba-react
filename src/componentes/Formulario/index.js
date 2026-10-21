@@ -2,19 +2,25 @@ import Botao from "../Botao";
 import CampoTexto from "../CampoTexto";
 import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
+import { useState } from "react";
 
 const Formulario = () => {
 
-  const elenco = [
-    'Coach',
-    'Starting Lineup',
-    'Point Guard',
-    'Shooting Guard',
-    'Small Forward',
-    'Power Forward',
-    'Center',
-    'Sixth Man'
+  const categorias = [
+    'Campeão',
+    'MVP',
+    'Finals MVP',
+    'Defensive Player of the Year',
+    'Rookie of the Year',
+    'Clutch Player of the Year',
+    'Sixth Man of the Year',
+    'Most Improved Player',
+    'Coach of the Year'
   ]
+
+  const [categoria, setCategoria] = useState(categorias[0]);
+
+  const tipoNome = categoria === "Campeão" ? "Equipe" : categoria === "Coach of the Year" ? "Treinador" : "Atleta"; 
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
@@ -23,11 +29,11 @@ const Formulario = () => {
   return (
     <section className="formulario">
       <form onSubmit={aoSalvar}>
-        <h2>Preencha os dados para criar o card do colaborador</h2>
-        <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite seu nome..." />
-        <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo..." />
+        <h2>Bolão NBA 2026/27</h2>
+        <ListaSuspensa obrigatorio={true} label="Categoria" itens={categorias} valor={categoria} aoAlterado={setCategoria}/>
+        <CampoTexto obrigatorio={true} label={tipoNome} placeholder="Digite aqui..." />
         <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem..." />
-        <ListaSuspensa obrigatorio={true} label="Elenco" itens={elenco}/>
+        
         <Botao>
           Criar Card
         </Botao>
