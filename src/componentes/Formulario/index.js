@@ -4,7 +4,7 @@ import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
 import { useState } from "react";
 
-const Formulario = () => {
+const Formulario = (props) => {
 
   const categorias = [
     'Campeão',
@@ -26,7 +26,10 @@ const Formulario = () => {
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
-    console.log('Form foi submetido =>', categoria, texto)
+    props.aoPalpiteCadastrado({
+      categoria,
+      texto,
+    })
   }
 
   return (
