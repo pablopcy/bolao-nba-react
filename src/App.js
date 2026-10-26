@@ -63,9 +63,15 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Formulario aoPalpiteCadastrado={palpite => aoNovoPalpiteAdicionado(palpite)}/>
+      <Formulario categorias={categorias.map(categoria => categoria.nome)} aoPalpiteCadastrado={palpite => aoNovoPalpiteAdicionado(palpite)}/>
 
-      {categorias.map(categoria => <Categoria key={categoria.nome} nome={categoria.nome} corPrimaria={categoria.corPrimaria} corSecundaria={categoria.corSecundaria}/>)}
+      {categorias.map(categoria => <Categoria 
+        key={categoria.nome} 
+        nome={categoria.nome} 
+        corPrimaria={categoria.corPrimaria} 
+        corSecundaria={categoria.corSecundaria}
+        palpites={palpites.filter(palpite => palpite.categoria === categoria.nome)}
+      />)}
 
     </div>
   );

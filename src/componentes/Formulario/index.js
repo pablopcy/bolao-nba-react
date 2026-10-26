@@ -6,19 +6,7 @@ import { useState } from "react";
 
 const Formulario = (props) => {
 
-  const categorias = [
-    'Campeão',
-    'MVP',
-    'Finals MVP',
-    'Defensive Player of the Year',
-    'Rookie of the Year',
-    'Clutch Player of the Year',
-    'Sixth Man of the Year',
-    'Most Improved Player',
-    'Coach of the Year'
-  ]
-
-  const [categoria, setCategoria] = useState(categorias[0]);
+  const [categoria, setCategoria] = useState(props.categorias[0]);
 
   const tipoNome = categoria === "Campeão" ? "Equipe" : categoria === "Coach of the Year" ? "Treinador" : "Atleta"; 
 
@@ -30,6 +18,8 @@ const Formulario = (props) => {
       categoria,
       texto,
     })
+    setCategoria('');
+    setTexto('');
   }
 
   return (
@@ -39,7 +29,7 @@ const Formulario = (props) => {
         <ListaSuspensa 
           obrigatorio={true} 
           label="Categoria" 
-          itens={categorias} 
+          itens={props.categorias} 
           valor={categoria} 
           aoAlterado={setCategoria}
           />
