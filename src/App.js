@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Banner from './componentes/Banner';
+import Imagem from './componentes/Imagem';
 import Formulario from './componentes/Formulario';
 import Categoria from './componentes/Categoria';
 import Rodape from './componentes/Rodape';
@@ -57,13 +57,12 @@ function App() {
   const [palpites, setPalpites] = useState([]);
 
   const aoNovoPalpiteAdicionado = (palpite) => {
-    console.log(palpite);
     setPalpites([...palpites, palpite])
   }
 
   return (
     <div className="App">
-      <Banner />
+      <Imagem />
       <Formulario categorias={categorias.map(categoria => categoria.nome)} aoPalpiteCadastrado={palpite => aoNovoPalpiteAdicionado(palpite)}/>
 
       {categorias.map(categoria => <Categoria 

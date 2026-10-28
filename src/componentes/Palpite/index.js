@@ -3,7 +3,7 @@ import './Palpite.css';
 const Palpite = (props) => {
     return(
         <div className='palpite'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={{ backgroundColor: props.corDeFundo }}>
                 <img src="https://github.com/pablopcy.png" alt={props.texto} />
             </div>
             <div className='rodape'>

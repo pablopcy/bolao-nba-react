@@ -46,7 +46,7 @@ const Formulario = (props) => {
           />
         
         <Botao>
-          Criar Card
+          Adicionar Palpite
         </Botao>
       </form>
     </section>
