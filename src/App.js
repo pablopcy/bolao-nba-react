@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
 import Categoria from './componentes/Categoria';
+import Rodape from './componentes/Rodape';
 
 function App() {
 
@@ -72,6 +73,7 @@ function App() {
         corSecundaria={categoria.corSecundaria}
         palpites={palpites.filter(palpite => palpite.categoria === categoria.nome)}
       />)}
+      <Rodape />
 
     </div>
   );
