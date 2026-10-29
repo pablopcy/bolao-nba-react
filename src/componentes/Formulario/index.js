@@ -29,6 +29,7 @@ const Formulario = (props) => {
         <ListaSuspensa 
           obrigatorio={true} 
           label="Categoria" 
+          placeholder="Escolha uma categoria"
           itens={props.categorias} 
           valor={categoria} 
           aoAlterado={setCategoria}
