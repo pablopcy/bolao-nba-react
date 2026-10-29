@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Formulario = (props) => {
 
-  const [categoria, setCategoria] = useState(props.categorias[0]);
+  const [categoria, setCategoria] = useState('');
 
   const tipoNome = categoria === "Campeão" ? "Equipe" : categoria === "Coach of the Year" ? "Treinador" : "Atleta"; 
 
