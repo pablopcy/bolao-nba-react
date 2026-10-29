@@ -7,6 +7,13 @@
     border-radius: 10px 10px 0px 0px;
 }
 
+.palpite-container h3 {
+    font-size: 32;
+    border-bottom: 4px solid;
+    display: inline-block;
+    padding: 8px;
+}
+
 .palpite img {
     width: 100px;
     border-radius: 50%;

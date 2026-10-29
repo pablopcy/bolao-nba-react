@@ -3,16 +3,10 @@
     padding: 32px;
 }
 
-.categoria h3 {
-    font-size: 32;
-    border-bottom: 4px solid;
-    display: inline-block;
-    padding: 8px;
-}
-
 .categoria .palpites {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 16px;
     margin-top: 32px;
     flex-wrap: wrap;
 }
