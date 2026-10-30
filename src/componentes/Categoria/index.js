@@ -6,17 +6,19 @@ const Categoria = (props) => {
         props.palpites.length > 0 && (
             <section className="categoria">
                 <div className="palpites">
-                    {props.palpites.map((palpite, indice) => {
+                    {props.palpites.map((palpite) => {
                         const categoria = props.categorias.find(
                             item => item.nome === palpite.categoria
                         );
 
                         return (
                             <Palpite
-                                key={indice}
+                                key={palpite.id}
                                 corDeFundo={categoria?.corPrimaria}
+                                emoji={categoria?.emoji}
                                 texto={palpite.texto}
                                 categoria={palpite.categoria}
+                                aoExcluir={() => props.aoExcluir(palpite.id)}
                             />
                         );
                     })}

@@ -6,11 +6,16 @@ const Palpite = (props) => {
             <h3 style={{ borderColor: props.corDeFundo }}>{props.categoria}</h3>
             <div className='palpite'>
                 <div className='cabecalho' style={{ backgroundColor: props.corDeFundo }}>
-                    <img src="https://github.com/pablopcy.png" alt={props.texto} />
+                    <span className="emoji-categoria" aria-hidden="true">
+                      {props.emoji}
+                    </span>
                 </div>
                 <div className='rodape'>
                     <h4>{props.texto}</h4>
                     <h5>{props.categoria}</h5>
+                    <button className="botao-excluir" onClick={props.aoExcluir}>
+                        Excluir
+                    </button>
                 </div>
             </div>    
         </div>

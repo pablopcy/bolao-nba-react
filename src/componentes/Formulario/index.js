@@ -25,7 +25,7 @@ const Formulario = (props) => {
   return (
     <section className="formulario">
       <form onSubmit={aoSalvar}>
-        <h2>Bolão NBA 2026/27</h2>
+        <h2>Bolão NBA 2026/27 {'\u{1F3C0}'}</h2>
         <ListaSuspensa 
           obrigatorio={true} 
           label="Categoria" 
@@ -40,10 +40,6 @@ const Formulario = (props) => {
           placeholder="Digite aqui..." 
           valor={texto} 
           aoAlterado={valor => setTexto(valor)} 
-          />
-        <CampoTexto 
-          label="Imagem" 
-          placeholder="Informe o endereço da imagem..." 
           />
         
         <Botao>
