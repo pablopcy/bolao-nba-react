@@ -1,0 +1,99 @@
+.App {
+    min-height: 100vh;
+    background-color: #fff;
+    color: #212121;
+    color-scheme: light;
+}
+
+.controle-tema {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+}
+
+.interruptor-tema {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 32px;
+    padding: 4px;
+    border: none;
+    border-radius: 999px;
+    background-color: #757575;
+    cursor: pointer;
+    transition: background-color 200ms ease;
+}
+
+.interruptor-tema-bolinha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #212121;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateX(0);
+    transition: transform 200ms ease;
+}
+
+.interruptor-tema[aria-checked="true"] {
+    background-color: #b86b00;
+}
+
+.interruptor-tema[aria-checked="true"] .interruptor-tema-bolinha {
+    transform: translateX(24px);
+}
+
+.interruptor-tema:focus-visible {
+    outline: 3px solid #b86b00;
+    outline-offset: 4px;
+}
+
+.App.modo-noturno {
+    background-color: #121212;
+    color: #f2f2f2;
+    color-scheme: dark;
+}
+
+.modo-noturno .formulario form,
+.modo-noturno .palpite .rodape {
+    background-color: #242424;
+}
+
+.modo-noturno .campo-texto input,
+.modo-noturno .lista-suspensa select,
+.modo-noturno .lista-suspensa select option {
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+.modo-noturno .campo-texto input::placeholder,
+.modo-noturno .lista-suspensa select:required:invalid {
+    color: #bdbdbd;
+    opacity: 1;
+}
+
+.modo-noturno .palpite .rodape h5 {
+    color: #f2f2f2;
+}
+
+.modo-noturno .campo-texto input.campo-com-erro {
+    outline-color: #ff8a80;
+}
+
+.modo-noturno .campo-texto .mensagem-erro {
+    color: #ff8a80;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .interruptor-tema,
+    .interruptor-tema-bolinha {
+        transition: none;
+    }
+}

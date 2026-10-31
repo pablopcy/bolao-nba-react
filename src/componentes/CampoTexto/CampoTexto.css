@@ -17,3 +17,14 @@
     padding: 24px;
     box-sizing: border-box;
 }
+
+.campo-texto input.campo-com-erro {
+    outline: 2px solid #c62828;
+    outline-offset: -2px;
+}
+
+.campo-texto .mensagem-erro {
+    color: #c62828;
+    font-size: 14px;
+    margin: 8px 0 0;
+}
