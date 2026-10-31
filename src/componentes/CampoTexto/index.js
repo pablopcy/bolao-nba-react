@@ -12,7 +12,7 @@ const CampoTexto = (props) => {
       <input
         id={id}
         className={props.erro ? 'campo-com-erro' : ''}
-        valor={props.valor}
+        value={props.valor}
         onChange={evento => props.aoAlterado(evento.target.value)}
         required={props.obrigatorio}
         placeholder={props.placeholder}
